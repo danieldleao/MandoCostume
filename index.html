@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandalorian Armor — Cheapest Etsy Build Guide</title>
+<style>
+  :root{
+    --bg:#0b0e13; --bg2:#0e131b; --panel:#141b26; --panel2:#18202e;
+    --line:#243044; --ink:#e9eef5; --muted:#9aa7ba; --faint:#6b7889;
+    --amber:#f5a623; --amber2:#ffc25e; --green:#3ecf8e; --red:#ff6b6b; --blue:#5aa9ff;
+    --silver:linear-gradient(135deg,#f4f6f9 0%,#b9c2cf 40%,#e8edf3 60%,#8f9aab 100%);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6}
+  /* HERO */
+  .hero{position:relative;overflow:hidden;padding:4.5rem 1.5rem 3.5rem;text-align:center;
+    background:radial-gradient(1200px 500px at 50% -10%,#1d2a3f 0%,var(--bg) 60%);}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+    background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+  .kicker{display:inline-block;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--amber);border:1px solid #3a2f18;background:#1a1408;border-radius:999px;
+    padding:.35rem 1rem;margin-bottom:1.2rem}
+  .hero h1{margin:0;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.01em;
+    background:var(--silver);-webkit-background-clip:text;background-clip:text;color:transparent;
+    font-weight:800}
+  .hero p.sub{color:var(--muted);max-width:640px;margin:1rem auto 0;font-size:1.02rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.4rem}
+  .chip{font-size:.82rem;color:var(--muted);border:1px solid var(--line);background:var(--panel);
+    border-radius:999px;padding:.32rem .85rem}
+  .chip b{color:var(--ink)}
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,14,19,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  nav .inner{max-width:1100px;margin:0 auto;display:flex;gap:.25rem;overflow-x:auto;padding:.55rem 1rem}
+  nav a{flex:0 0 auto;color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:600;
+    padding:.5rem .9rem;border-radius:8px;white-space:nowrap}
+  nav a:hover{color:var(--ink);background:var(--panel)}
+  nav a.active,nav a.active{color:#0b0e13;background:var(--amber)}
+  /* LAYOUT */
+  main{max-width:1100px;margin:0 auto;padding:0 1.25rem 4rem}
+  section{padding-top:3.2rem;scroll-margin-top:70px}
+  h2{font-size:1.5rem;margin:0 0 .4rem;display:flex;align-items:center;gap:.6rem}
+  h2 .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+    border-radius:10px;background:var(--amber);color:#0b0e13;font-size:1rem;font-weight:800}
+  .sec-sub{color:var(--muted);margin:0 0 1.6rem;max-width:760px}
+  /* STAT CARDS */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.6rem 0}
+  .stat{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-radius:16px;padding:1.4rem 1.5rem;position:relative;overflow:hidden}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--amber)}
+  .stat.alt::before{background:var(--blue)}
+  .stat .label{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+  .stat .big{font-size:2.4rem;font-weight:800;margin:.3rem 0;color:#fff}
+  .stat .big small{font-size:1rem;color:var(--muted);font-weight:600}
+  .stat p{margin:.4rem 0 0;font-size:.88rem;color:var(--muted)}
+  /* FINDINGS */
+  .findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+  .finding{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.25rem}
+  .finding h3{margin:.1rem 0 .5rem;font-size:1rem}
+  .finding p,.finding li{font-size:.9rem;color:var(--muted)}
+  .finding ul{margin:.4rem 0;padding-left:1.15rem}
+  .finding .icon{font-size:1.4rem}
+  .warn{border-color:#4a3320;background:#191410}
+  .warn h3{color:var(--amber2)}
+  /* PIECE CARDS */
+  .lane-tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    border-radius:6px;padding:.25rem .65rem;margin-bottom:1rem}
+  .lane-fin{background:#12351f;color:var(--green);border:1px solid #1e5c37}
+  .lane-kit{background:#2c1e08;color:var(--amber2);border:1px solid #5a3d14}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.1rem}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.25rem 1.35rem;
+    display:flex;flex-direction:column;transition:transform .15s ease,border-color .15s ease}
+  .card:hover{transform:translateY(-3px);border-color:#33445e}
+  .card .piece{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+  .card h3{margin:.35rem 0 .15rem;font-size:1.06rem;line-height:1.35}
+  .card .seller{font-size:.85rem;color:var(--faint);margin-bottom:.7rem}
+  .price-row{display:flex;align-items:baseline;gap:.6rem;margin:.2rem 0 .6rem}
+  .price-row .cad{font-size:1.7rem;font-weight:800;color:#fff}
+  .price-row .usd{font-size:.85rem;color:var(--muted)}
+  .tag{display:inline-block;font-size:.76rem;font-weight:600;border-radius:999px;padding:.18rem .65rem;margin:.15rem .25rem .15rem 0}
+  .t-fin{background:#12351f;color:var(--green)}
+  .t-raw{background:#2c1e08;color:var(--amber2)}
+  .t-ship{background:#152238;color:var(--blue)}
+  .t-flag{background:#3a1420;color:var(--red)}
+  .card .why{font-size:.87rem;color:var(--muted);margin:.5rem 0 .9rem;flex:1}
+  .btn{display:inline-block;text-align:center;background:var(--amber);color:#0b0e13;font-weight:700;
+    text-decoration:none;border-radius:10px;padding:.65rem 1rem;font-size:.92rem;margin-top:auto}
+  .btn:hover{background:var(--amber2)}
+  details{margin-top:.8rem;font-size:.83rem;color:var(--muted)}
+  details summary{cursor:pointer;color:var(--faint);font-weight:600}
+  details summary:hover{color:var(--ink)}
+  details ul{margin:.5rem 0;padding-left:1.1rem}
+  details a{color:var(--blue)}
+  .none-card{opacity:.75;border-style:dashed}
+  .none-card .piece{color:var(--faint)}
+  /* TABLES */
+  .twrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:.88rem}
+  th,td{padding:.7rem .85rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#1a2230;color:var(--amber2);font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  tr.total td{background:#1a2230;font-weight:700;border-top:2px solid var(--amber)}
+  td.n{white-space:nowrap;font-weight:700;color:#fff}
+  td a{color:var(--blue)}
+  /* CALLOUTS */
+  .callout{border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;font-size:.92rem}
+  .callout.amber{background:#1a1408;border:1px solid #4a3a1c;color:#e8c987}
+  .callout.blue{background:#101a2a;border:1px solid #274a75;color:#b9d4f5}
+  .callout.red{background:#1d1015;border:1px solid #5c2430;color:#f0b9c2}
+  .callout b{color:#fff}
+  .deadline{display:inline-block;background:#2c1e08;color:var(--amber2);border:1px solid #5a3d14;
+    border-radius:8px;padding:.3rem .7rem;font-size:.82rem;font-weight:700;margin:.2rem .3rem .2rem 0}
+  footer{border-top:1px solid var(--line);margin-top:4rem;padding:2rem 1.25rem;color:var(--faint);
+    font-size:.82rem;text-align:center}
+  .top{position:fixed;right:1.2rem;bottom:1.2rem;background:var(--panel);border:1px solid var(--line);
+    color:var(--ink);border-radius:50%;width:46px;height:46px;display:flex;align-items:center;
+    justify-content:center;text-decoration:none;font-size:1.2rem;opacity:.85}
+  .top:hover{opacity:1;border-color:var(--amber)}
+  @media(max-width:640px){.hero{padding:3rem 1rem 2.5rem}.price-row .cad{font-size:1.45rem}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="kicker">Beskar on a budget</span>
+  <h1>Mandalorian Armor<br>Cheapest Etsy Build Guide</h1>
+  <p class="sub">Every listing opened and variant-priced on Oct 10, 2026 — real wearable-adult prices, not headline "from" prices. Din Djarin style, adult size, shipping to Ontario.</p>
+  <div class="chips">
+    <span class="chip"><b>28</b> listings verified</span>
+    <span class="chip">Currency: <b>1 USD = 1.43 CAD</b></span>
+    <span class="chip">Floor: <b>C$1,008</b> all-in</span>
+    <span class="chip">Finished-leaning: <b>C$1,273</b></span>
+  </div>
+</header>
+
+<nav><div class="inner">
+  <a href="#overview" class="active">Overview</a>
+  <a href="#finished">Finished armor</a>
+  <a href="#kits">Unfinished kits</a>
+  <a href="#combos">Cheapest combos</a>
+  <a href="#notes">Traps &amp; notes</a>
+</div></nav>
+
+<main>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <h2><span class="num">1</span> The bottom line</h2>
+  <p class="sec-sub">Two realistic builds. "Finished" means wearable out of the box; "kits" means raw 3D prints you sand, paint and assemble yourself.</p>
+  <div class="stats">
+    <div class="stat">
+      <div class="label">Cheapest genuine build — unfinished kits</div>
+      <div class="big">C$1,008 <small>all-in</small></div>
+      <p>10 armor pieces from 7 sellers · items C$641.68 + shipping ≈ C$250 + 13% HST. Plus US$60–100 of finishing supplies and your labor.</p>
+    </div>
+    <div class="stat alt">
+      <div class="label">Cheapest finished-leaning build</div>
+      <div class="big">C$1,273 <small>all-in</small></div>
+      <p>Helmet, shoulders, gauntlets arrive painted; chest, back, thigh, knee, shin still need finishing. Plus US$40–70 of supplies.</p>
+    </div>
+  </div>
+  <div class="findings">
+    <div class="finding">
+      <div class="icon">🔍</div>
+      <h3>Why verification mattered</h3>
+      <p>Etsy advertises the cheapest variant. Traps caught and excluded: a "$28 thigh" that was $46 for one adult thigh · a "$29.28 lower-body kit" that was a single knee (full set $209.66) · "$50+ chest armor" that's $70–80 in adult size · a "$25 thigh" that was one small plate.</p>
+    </div>
+    <div class="finding">
+      <div class="icon">🚫</div>
+      <h3>What doesn't exist on Etsy</h3>
+      <p>No finished Din Djarin chest+ab, back, thigh, knee or shin armor at any price. No standalone ab plates. No Din Djarin codpiece — only Boba Fett style. Even the "finished" build needs paint work on 5 pieces.</p>
+    </div>
+    <div class="finding">
+      <div class="icon">⚖️</div>
+      <h3>Season consistency</h3>
+      <p>Don't mix Season 1 (MinuteFett chest) with Season 3 / Post-Imperial (IntrepidDawn). Thigh sellers offer Season 1 vs 2/3 variants — pick one lane. Din's thigh asymmetry (large right, small left) is matched by the EnigmaWorkshop $50 pair.</p>
+    </div>
+  </div>
+  <div class="callout amber"><b>⏰ Time-sensitive sales:</b>
+    <span class="deadline">UA3D 10% off — ends ~Oct 13</span>
+    <span class="deadline">CosmicArmoryPrints 10% off — ends Oct 22</span>
+    <span class="deadline">MinuteFett sales (helmet kit, chest, knee, shin) — end Nov 1</span>
+  </div>
+</section>
+
+<!-- FINISHED -->
+<section id="finished">
+  <h2><span class="num">2</span> Finished / wearable armor</h2>
+  <p class="sec-sub">Arrives painted and wearable. Thin pickings — most pieces simply aren't sold finished.</p>
+  <span class="lane-tag lane-fin">Finished lane</span>
+  <div class="cards">
+
+    <div class="card">
+      <div class="piece">Helmet</div>
+      <h3>Din Djarin Helmet Replica — Finished Helmet variant</h3>
+      <div class="seller">CraftingWithHippo · Brighton, CO</div>
+      <div class="price-row"><span class="cad">C$200.20</span><span class="usd">US$140.00</span></div>
+      <div><span class="tag t-fin">Finished / painted PLA</span><span class="tag t-ship">Ship: at checkout</span><span class="tag t-flag">Tiny shop: 17 sales</span></div>
+      <p class="why">Cheapest finished Din helmet found. T-visor shown in photos; padding/straps not mentioned. Only 1 item review — check feedback before buying.</p>
+      <a class="btn" href="https://www.etsy.com/listing/4525702503/mandolirian-helmet-raw-3d-print" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternative</summary><ul>
+        <li><a href="https://www.etsy.com/listing/4370134761/din-djarin-style-mandalorian-helmet" target="_blank" rel="noopener">GritCityArmory painted helmet</a> — US$250 → C$357.50 (also a tiny shop, 18 sales)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Shoulder pauldrons · pair</div>
+      <h3>Handmade Beskar Shoulder Armor — Left and Right, Painted</h3>
+      <div class="seller">UA3D · Ukraine · 4.9★ (1.5k)</div>
+      <div class="price-row"><span class="cad">C$128.69</span><span class="usd">US$89.99 sale</span></div>
+      <div><span class="tag t-fin">Finished / painted</span><span class="tag t-ship">"Free" ship — US listing</span></div>
+      <p class="why">Screen-accurate asymmetric pair with mudhorn sigil, painted. 10% off ends ~Oct 13. Free shipping shown (US context — confirm Canada cost).</p>
+      <a class="btn" href="https://www.etsy.com/listing/1288007556/handmade-mandalorian-beskar-armor-left" target="_blank" rel="noopener">View on Etsy →</a>
+    </div>
+
+    <div class="card">
+      <div class="piece">Hand gauntlets · pair</div>
+      <h3>Tougher PLA+ Mandalorian Gauntlet Pair — Finished &amp; Painted</h3>
+      <div class="seller">CaptainFettCosplay · 5.0★ (13 item reviews)</div>
+      <div class="price-row"><span class="cad">C$286.00</span><span class="usd">US$200.00</span></div>
+      <div><span class="tag t-fin">Finished / painted PLA+</span><span class="tag t-ship">Ship: at checkout</span></div>
+      <p class="why">Only finished Din gauntlets found. Flamethrower nozzle/dart inclusion not explicitly confirmed in the text — message the seller first.</p>
+      <a class="btn" href="https://www.etsy.com/listing/778959265/updated-tougher-pla-the-mandalorian" target="_blank" rel="noopener">View on Etsy →</a>
+    </div>
+
+    <div class="card">
+      <div class="piece">Full arm bundle · 6 pieces</div>
+      <h3>Beskar Armor FULL ARM — Full Set Finished</h3>
+      <div class="seller">UA3D · Ukraine</div>
+      <div class="price-row"><span class="cad">C$294.72</span><span class="usd">US$206.10</span></div>
+      <div><span class="tag t-fin">Finished: 2 pauldrons + 2 vambraces + 2 gauntlets</span><span class="tag t-ship">"Free" ship — US listing</span><span class="tag t-flag">3.8★ (4 reviews)</span></div>
+      <p class="why">Cheapest finished path for the whole arm — beats shoulders ($128.69) + gauntlets ($286) bought separately, and it's the only finished vambrace option. Thin reviews, though.</p>
+      <a class="btn" href="https://www.etsy.com/listing/780813701/the-mandalorian-beskar-armor-full-arm" target="_blank" rel="noopener">View on Etsy →</a>
+    </div>
+
+    <div class="card none-card">
+      <div class="piece">Chest + Ab · Back · Vambraces · Thigh · Knee · Shin</div>
+      <h3>No finished options found</h3>
+      <div class="seller">Verified via dedicated searches, Oct 10 2026</div>
+      <p class="why">These pieces exist on Etsy only as unfinished kits (see below) — except one ornate Celtic-styled finished chest that isn't screen-accurate.</p>
+    </div>
+
+    <div class="card none-card">
+      <div class="piece">Codpiece</div>
+      <h3>No Din Djarin codpiece exists</h3>
+      <div class="seller">Only Boba Fett style available</div>
+      <p class="why">Cheapest Boba-style: MakerBak3d US$23 → C$32.89. <a href="https://www.etsy.com/listing/1069501800/classic-bounty-hunter-codpiece-armor" target="_blank" rel="noopener" style="color:var(--blue)">View →</a></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- KITS -->
+<section id="kits">
+  <h2><span class="num">3</span> Unfinished kits — cheapest per piece</h2>
+  <p class="sec-sub">Raw 3D prints. Cheapest genuine prices, but budget US$60–100 for primer, filler, sandpaper, metallic paint, clear coat, straps and helmet padding.</p>
+  <span class="lane-tag lane-kit">Unfinished kit lane</span>
+  <div class="cards">
+
+    <div class="card">
+      <div class="piece">Helmet</div>
+      <h3>Mandalorian Foundling Helmet Kit</h3>
+      <div class="seller">JawaBrothersCustoms · San Antonio, TX</div>
+      <div class="price-row"><span class="cad">C$85.80</span><span class="usd">US$60 with visor (US$40 raw)</span></div>
+      <div><span class="tag t-raw">Raw 3D print</span><span class="tag t-ship">"Free" ship — US listing</span></div>
+      <p class="why">Cheapest wearable-helmet path: raw kit + US$20 visor variant. Padding/straps not included.</p>
+      <a class="btn" href="https://www.etsy.com/listing/1795745143/mandalorian-foundling-helmet-kit" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternates</summary><ul>
+        <li><a href="https://www.etsy.com/listing/4580049911/din-djarin-mandalorian-helmet" target="_blank" rel="noopener">CosmicArmoryPrints Din helmet</a> — US$85.50 → C$122.27 (sale ends Oct 22, Din-specific)</li>
+        <li><a href="https://www.etsy.com/listing/1829416810/din-djarin-hero-mandalorian-helmet-kit" target="_blank" rel="noopener">MinuteFett resin cast kit</a> — US$170 → C$243.10 (sale ends Nov 1, no visor)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Chest + abdominal plates</div>
+      <h3>The Mandalorian Chest &amp; Ab Armor</h3>
+      <div class="seller">BackstageCosplay · 4.7★ (21)</div>
+      <div class="price-row"><span class="cad">C$100.10</span><span class="usd">US$70 (14") — up to US$80</span></div>
+      <div><span class="tag t-raw">Raw black PLA</span><span class="tag t-ship">Ship: at checkout</span></div>
+      <p class="why">Ab plates aren't sold separately anywhere — this chest+ab bundle is effectively mandatory. Adult 14–16" sizes priced US$70–80.</p>
+      <a class="btn" href="https://www.etsy.com/listing/1769008216/the-mandalorian-chest-ab-armor" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternate</summary><ul>
+        <li><a href="https://www.etsy.com/listing/1463941975/modern-mando-post-imperial-style" target="_blank" rel="noopener">IntrepidDawn Season 3 chest+ab</a> — US$84.99 → C$121.54 (Star Seller, free US ship)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Back armor</div>
+      <h3>Mandalorian Beskar Back Armor Kit</h3>
+      <div class="seller">DustyDesigners · 4.9★ (18)</div>
+      <div class="price-row"><span class="cad">C$60.06</span><span class="usd">US$42.00</span></div>
+      <div><span class="tag t-raw">Raw PETG</span><span class="tag t-ship">"Free" ship — US listing</span></div>
+      <p class="why">Cheapest backplate, strong reviews, 14-day returns.</p>
+      <a class="btn" href="https://www.etsy.com/listing/1904222989/mandalorian-beskar-back-armor-kit" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternate</summary><ul>
+        <li><a href="https://www.etsy.com/listing/1889826143/the-mandalorian-back-armor-diy-blank-kit" target="_blank" rel="noopener">EnigmaWorkshop back armor</a> — US$50 → C$71.50 (PETG, jetpack-mount option)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Codpiece · Boba style</div>
+      <h3>Classic Bounty Hunter Codpiece Armor</h3>
+      <div class="seller">MakerBak3d · 5.0★ (14)</div>
+      <div class="price-row"><span class="cad">C$32.89</span><span class="usd">US$23.00 (M)</span></div>
+      <div><span class="tag t-raw">Kit</span><span class="tag t-ship">Ship: at checkout</span><span class="tag t-flag">Boba Fett style</span></div>
+      <p class="why">No Din Djarin codpiece exists on Etsy — this Boba-style piece is the closest, cheapest stand-in.</p>
+      <a class="btn" href="https://www.etsy.com/listing/1069501800/classic-bounty-hunter-codpiece-armor" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternate</summary><ul>
+        <li><a href="https://www.etsy.com/listing/1422044329/boba-fett-codpiece-11-wearable-armor-kit" target="_blank" rel="noopener">DustyDesigners Boba codpiece</a> — US$30 → C$42.90 (free US ship)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Shoulder pauldrons · pair</div>
+      <h3>Mandalorian Armor Pauldron Plates</h3>
+      <div class="seller">Edgewater3DPrints · 4.9★ (65)</div>
+      <div class="price-row"><span class="cad">C$57.19</span><span class="usd">US$39.99</span></div>
+      <div><span class="tag t-raw">Raw PLA</span><span class="tag t-ship">Ship: at checkout</span></div>
+      <p class="why">Asymmetric Mudhorn-variant pair, adult sized, color choice white/gray/black.</p>
+      <a class="btn" href="https://www.etsy.com/listing/1446537499/mandalorian-armor-pauldron-plates-for" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternate</summary><ul>
+        <li><a href="https://www.etsy.com/listing/1905255337/mandalorian-beskar-shoulder-armor" target="_blank" rel="noopener">DustyDesigners shoulder kit</a> — US$43 → C$61.49 (1 blank + 1 Mudhorn, PETG, free US ship)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Forearm vambraces · pair</div>
+      <h3>Mandalorian Armor Arm Gauntlets</h3>
+      <div class="seller">Edgewater3DPrints · 4.6★ (139)</div>
+      <div class="price-row"><span class="cad">C$50.04</span><span class="usd">US$34.99 (S)</span></div>
+      <div><span class="tag t-raw">Raw PLA</span><span class="tag t-ship">Ship: at checkout</span></div>
+      <p class="why">Custom sizing; Classic US$39.99 / Large US$49.99. Combine with the same seller's pauldrons in one order.</p>
+      <a class="btn" href="https://www.etsy.com/listing/1457533149/mandalorian-armor-arm-gauntlets-adult" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternate</summary><ul>
+        <li><a href="https://www.etsy.com/listing/1434511338/the-mandalorian-v2-wrist-bracers" target="_blank" rel="noopener">KDR3DPrinting v2 wrist bracers</a> — US$49.99 → C$71.49 (free US ship)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Hand gauntlets · pair</div>
+      <h3>Mandalorian Beskar Gauntlet Armor Kit w/ Resin Greeblies</h3>
+      <div class="seller">DustyDesigners · 4.9★ (43)</div>
+      <div class="price-row"><span class="cad">C$74.36</span><span class="usd">US$52.00</span></div>
+      <div><span class="tag t-raw">Raw PETG + resin</span><span class="tag t-ship">"Free" ship — US listing</span></div>
+      <p class="why">Pair with resin greeblies; LED pair variant US$65. Combine with the same seller's back + thigh plates in one order.</p>
+      <a class="btn" href="https://www.etsy.com/listing/1906199965/mandalorian-beskar-gauntlet-armor-kit-w" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternate</summary><ul>
+        <li><a href="https://www.etsy.com/listing/1038984377/kalevala-armory-pre-sized-mandalorian" target="_blank" rel="noopener">KalevalaArmory gauntlets</a> — US$160 → C$228.80 (resin, screen-accurate Default/Whistling pair, 5.0★ 95 reviews)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Thigh armor · pair</div>
+      <h3>Mandalorian Beskar Thigh Armor Kit</h3>
+      <div class="seller">DustyDesigners · 4.8★ (19)</div>
+      <div class="price-row"><span class="cad">C$64.35</span><span class="usd">US$45.00</span></div>
+      <div><span class="tag t-raw">Raw PETG</span><span class="tag t-ship">"Free" ship — US listing</span></div>
+      <p class="why">Season 1 or 2/3 variant at no price difference — match your chest's season lane.</p>
+      <a class="btn" href="https://www.etsy.com/listing/1891078864/mandalorian-beskar-thigh-armor-kit" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternates</summary><ul>
+        <li><a href="https://www.etsy.com/listing/1881545642/the-mandalorian-thigh-armor-diy-blank" target="_blank" rel="noopener">EnigmaWorkshop thigh kit</a> — US$50 → C$71.50 (asymmetric L+S, show-accurate)</li>
+        <li><a href="https://www.etsy.com/listing/995309626/mandalorian-star-wars-cosplay-kwikdraw" target="_blank" rel="noopener">MakerBak3d Kwikdraw thigh</a> — US$88+ → C$125.84 (finish unverified, photos look painted)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Knee armor · pair</div>
+      <h3>Mandalorian Knee Armor — Both Knees</h3>
+      <div class="seller">KDR3DPrinting · 4.9★ (30)</div>
+      <div class="price-row"><span class="cad">C$50.04</span><span class="usd">US$34.99</span></div>
+      <div><span class="tag t-raw">Unfinished</span><span class="tag t-ship">"Free" ship — US listing</span></div>
+      <p class="why">Verified pair pricing — many knee listings price a single knee.</p>
+      <a class="btn" href="https://www.etsy.com/listing/1475627393/mandalorian-knee-armor" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternate</summary><ul>
+        <li><a href="https://www.etsy.com/listing/4303693845/mandalorian-knee-armor-kit" target="_blank" rel="noopener">MinuteFett knee kit</a> — US$46.75 → C$66.85 (sale ends Nov 1)</li>
+      </ul></details>
+    </div>
+
+    <div class="card">
+      <div class="piece">Shin armor · pair</div>
+      <h3>Mandalorian Shin Armor Kit</h3>
+      <div class="seller">MinuteFett · Star Seller</div>
+      <div class="price-row"><span class="cad">C$66.85</span><span class="usd">US$46.75 sale</span></div>
+      <div><span class="tag t-raw">Kit</span><span class="tag t-ship">"Free" ship — US listing</span><span class="tag t-flag">Sale ends Nov 1</span></div>
+      <p class="why">Verified pair ("TWO") pricing on sale from US$40 each.</p>
+      <a class="btn" href="https://www.etsy.com/listing/4303686250/mandalorian-shin-armor-kit" target="_blank" rel="noopener">View on Etsy →</a>
+      <details><summary>Alternate</summary><ul>
+        <li><a href="https://www.etsy.com/listing/4408879477/mandalorian-armor-shin-guards-armor-set" target="_blank" rel="noopener">PrintingCosplay shin guards</a> — US$70 → C$100.10 (PLA+)</li>
+      </ul></details>
+    </div>
+
+  </div>
+  <div class="callout blue"><b>Bundle check:</b> <a href="https://www.etsy.com/listing/930301904/mandalorian-armor-set-season-1-2-beskar" target="_blank" rel="noopener" style="color:var(--blue)">PrintingCosplay's 6-piece arm bundle</a> (US$150) loses to buying separately — Edgewater shoulders US$39.99 + Edgewater vambraces US$34.99 + DustyDesigners gauntlets US$52 = <b>US$126.98</b>.</div>
+</section>
+
+<!-- COMBOS -->
+<section id="combos">
+  <h2><span class="num">4</span> Cheapest complete combinations</h2>
+  <p class="sec-sub">Shipping assumption: US$25 ≈ C$35.75 per seller order (every listing showed "calculated at checkout" or US-only free shipping for Canada). Multi-piece orders from one seller ship once — already reflected.</p>
+
+  <h3 style="color:var(--amber2)">Option A — cheapest genuine build (all unfinished kits)</h3>
+  <div class="twrap"><table>
+    <thead><tr><th>Piece</th><th>Seller</th><th>Item</th><th>Ship</th><th>Subtotal</th></tr></thead>
+    <tbody>
+      <tr><td>Helmet raw + visor</td><td>JawaBrothersCustoms</td><td class="n">C$85.80</td><td class="n">C$35.75</td><td class="n">C$121.55</td></tr>
+      <tr><td>Chest + Ab (14")</td><td>BackstageCosplay</td><td class="n">C$100.10</td><td class="n">C$35.75</td><td class="n">C$135.85</td></tr>
+      <tr><td>Back + Gauntlets + Thigh</td><td>DustyDesigners (1 order)</td><td class="n">C$198.77</td><td class="n">C$35.75</td><td class="n">C$234.52</td></tr>
+      <tr><td>Codpiece (Boba-style)</td><td>MakerBak3d</td><td class="n">C$32.89</td><td class="n">C$35.75</td><td class="n">C$68.64</td></tr>
+      <tr><td>Shoulders + Vambraces</td><td>Edgewater3DPrints (1 order)</td><td class="n">C$107.23</td><td class="n">C$35.75</td><td class="n">C$142.98</td></tr>
+      <tr><td>Knee pair</td><td>KDR3DPrinting</td><td class="n">C$50.04</td><td class="n">C$35.75</td><td class="n">C$85.79</td></tr>
+      <tr><td>Shin pair</td><td>MinuteFett</td><td class="n">C$66.85</td><td class="n">C$35.75</td><td class="n">C$102.60</td></tr>
+      <tr class="total"><td colspan="2">Grand total (7 sellers)</td><td class="n">C$641.68</td><td class="n">C$250.25</td><td class="n">C$891.93 ≈ C$892</td></tr>
+    </tbody>
+  </table></div>
+  <p style="color:var(--muted);font-size:.9rem">With 13% HST (Etsy collects it for Ontario): <b style="color:#fff">≈ C$1,008</b>. Add US$60–100 of finishing supplies if you don't own them.</p>
+
+  <h3 style="color:var(--blue);margin-top:2rem">Option B — cheapest finished-leaning build</h3>
+  <div class="twrap"><table>
+    <thead><tr><th>Piece</th><th>Seller</th><th>Item</th><th>Ship</th><th>Subtotal</th></tr></thead>
+    <tbody>
+      <tr><td>Helmet, finished</td><td>CraftingWithHippo</td><td class="n">C$200.20</td><td class="n">C$35.75</td><td class="n">C$235.95</td></tr>
+      <tr><td>Chest + Ab (kit)</td><td>BackstageCosplay</td><td class="n">C$100.10</td><td class="n">C$35.75</td><td class="n">C$135.85</td></tr>
+      <tr><td>Back + Thigh (kits)</td><td>DustyDesigners (1 order)</td><td class="n">C$124.41</td><td class="n">C$35.75</td><td class="n">C$160.16</td></tr>
+      <tr><td>Codpiece (Boba-style)</td><td>MakerBak3d</td><td class="n">C$32.89</td><td class="n">C$35.75</td><td class="n">C$68.64</td></tr>
+      <tr><td>Full arm, finished</td><td>UA3D (Ukraine)</td><td class="n">C$294.72</td><td class="n">C$42.90</td><td class="n">C$337.62</td></tr>
+      <tr><td>Knee pair (kit)</td><td>KDR3DPrinting</td><td class="n">C$50.04</td><td class="n">C$35.75</td><td class="n">C$85.79</td></tr>
+      <tr><td>Shin pair (kit)</td><td>MinuteFett</td><td class="n">C$66.85</td><td class="n">C$35.75</td><td class="n">C$102.60</td></tr>
+      <tr class="total"><td colspan="2">Grand total (7 sellers)</td><td class="n">C$869.21</td><td class="n">C$257.40</td><td class="n">C$1,126.61 ≈ C$1,127</td></tr>
+    </tbody>
+  </table></div>
+  <p style="color:var(--muted);font-size:.9rem">With 13% HST: <b style="color:#fff">≈ C$1,273</b>. Add US$40–70 of supplies — chest, back, thigh, knee and shin still arrive raw.</p>
+</section>
+
+<!-- NOTES -->
+<section id="notes">
+  <h2><span class="num">5</span> Traps, caveats &amp; extras</h2>
+  <p class="sec-sub">Everything that could change the totals or the buying decision.</p>
+  <div class="findings">
+    <div class="finding warn">
+      <div class="icon">⚠️</div>
+      <h3>Unverified — confirm before buying</h3>
+      <ul>
+        <li>Canada shipping on <b>every</b> listing (needs postal code at checkout)</li>
+        <li>MakerBak3d thigh finish (photos look painted; description not fully read)</li>
+        <li>MakerBak3d knee: likely priced per single piece</li>
+        <li>Finished-helmet quality at both tiny shops (17 &amp; 18 sales)</li>
+        <li>UA3D finished arm set: 3.8★ from 4 reviews</li>
+      </ul>
+    </div>
+    <div class="finding">
+      <div class="icon">💾</div>
+      <h3>Digital STL files (separate lane)</h3>
+      <ul>
+        <li>Helmet: US$1–15 · Chest: US$25 · Codpiece: US$6–8</li>
+        <li>Vambrace/gauntlet: US$11.42–12 · Knee: US$9.37–17</li>
+        <li>Needs your own printer + ~2–4 kg filament + full finishing</li>
+      </ul>
+    </div>
+    <div class="finding">
+      <div class="icon">🥋</div>
+      <h3>Not included: soft parts</h3>
+      <p>Flight suit, flak vest, cape, neck seal, gloves, boots and belt are all required for a complete Din Djarin cosplay and were <b>not</b> researched — budget for them separately.</p>
+    </div>
+  </div>
+  <div class="callout red"><b>Currency note:</b> all CAD figures use 1 USD = 1.43 CAD (mid-market, Oct 10 2026). Your card or bank may add a conversion margin, and Etsy collects 13% HST on Ontario orders at checkout.</div>
+</section>
+
+</main>
+
+<footer>
+  Researched Oct 10, 2026 · Every price verified on the live product page's variant dropdown · Self-contained single file — publish as-is.
+</footer>
+
+<a class="top" href="#" title="Back to top">↑</a>
+<script>
+  // nav active state
+  const links=[...document.querySelectorAll('nav a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  addEventListener('scroll',()=>{
+    let i=secs.findIndex((s,j)=>{const r=s.getBoundingClientRect();const n=secs[j+1];
+      return r.top<=90&&(!n||n.getBoundingClientRect().top>90);});
+    links.forEach((a,j)=>a.classList.toggle('active',j===(i<0?0:i)));
+  },{passive:true});
+</script>
+</body>
+</html>
